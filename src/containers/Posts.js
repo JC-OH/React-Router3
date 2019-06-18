@@ -1,12 +1,13 @@
 import React from 'react';
 import BigText from '../components/BigText';
 
-const Posts = () => {
+// 라우트에서의 파라미터 값은, 컴포넌트에서 params props 에 접근하여 얻어 낼 수 있습니다.
+const Post = ({params}) => {
     return (
         <div>
-            <BigText>포스트</BigText>
+            <BigText>{params.id}</BigText>
         </div>
     );
 };
 
-export default Posts;
+export default Post;
