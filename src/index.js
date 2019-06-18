@@ -12,6 +12,7 @@ import App from './App';
 import Home from './containers/Home';
 import About from './containers/About';
 import Posts from './containers/Posts';
+import Post from './containers/Post';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -25,7 +26,9 @@ ReactDOM.render(
             {/*여러개의 Route 들이 자식으로 있는데, 이 자식들은 URL 이 매칭 하는 경우, App 컴포넌트의 자식으로 들어갑니다. 예를들어서,  / 경로의 경우엔 IndexRoute 를 사용하여 Home 컴포넌트를 렌더링합니다. /about 경로의 경우엔 About 컴포넌트를 렌더링하죠.*/}
             <IndexRoute component={Home}/>
             <Route path="about" component={About}/>
-            <Route path="post" component={Posts}/>
+            <Route path="post" component={Posts}>
+                <Route path=":id" component={Post}/>
+            </Route>
         </Route>
     </Router>, document.getElementById('root'));
 
