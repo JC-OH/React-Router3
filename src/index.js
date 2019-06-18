@@ -26,6 +26,7 @@ ReactDOM.render(
             {/*여러개의 Route 들이 자식으로 있는데, 이 자식들은 URL 이 매칭 하는 경우, App 컴포넌트의 자식으로 들어갑니다. 예를들어서,  / 경로의 경우엔 IndexRoute 를 사용하여 Home 컴포넌트를 렌더링합니다. /about 경로의 경우엔 About 컴포넌트를 렌더링하죠.*/}
             <IndexRoute component={Home}/>
             <Route path="about" component={About}/>
+            {/*라우터를 위와 같이 수정해줍니다. /post 경로를 위한 Route 컴포넌트 내부에 또 다른 Route 컴포넌트를 작성하세요. 여기서 path 을 :id 로 설정을 하면, id 라는 파라미터가 들어가는것이라고 설정을 하는 것 입니다.*/}
             <Route path="post" component={Posts}>
                 <Route path=":id" component={Post}/>
             </Route>
